@@ -1,0 +1,177 @@
+import { jsPDF } from 'jspdf';
+import { DocItem } from '../types';
+
+export function exportDocumentToPdf(doc: DocItem, format?: string) {
+  const activeFormat = format || doc.currentSummaryFormat || 'executive';
+  const summary = doc.summaries?.[activeFormat];
+  const summaryText = summary?.content || 'No summary text available.';
+
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'mm',
+    format: 'a4',
+  });
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+  const margin = 16;
+  const contentWidth = pageWidth - margin * 2;
+  let y = margin;
+
+  // Header background bar (Vibrant Purple / Indigo)
+  pdf.setFillColor(109, 40, 217); // #6D28D9
+  pdf.rect(0, 0, pageWidth, 28, 'F');
+
+  // Brand Name
+  pdf.setTextColor(255, 255, 255);
+  pdf.setFont('helvetica', 'bold');
+  pdf.setFontSize(16);
+  pdf.text('SummaMind AI', margin, 13);
+
+  // Subtitle
+  pdf.setFont('helvetica', 'normal');
+  pdf.setFontSize(8.5);
+  pdf.text('INTELLIGENT DOCUMENT EXECUTIVE BRIEF & SYNTHESIS', margin, 20);
+
+  // Date on right
+  const dateStr = new Date().toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  pdf.setFontSize(8);
+  pdf.text(dateStr, pageWidth - margin, 17, { align: 'right' });
+
+  y = 38;
+
+  // Document Title
+  pdf.setTextColor(23, 23, 37);
+  pdf.setFont('helvetica', 'bold');
+  pdf.setFontSize(15);
+  const titleLines = pdf.splitTextToSize(doc.title, contentWidth);
+  pdf.text(titleLines, margin, y);
+  y += titleLines.length * 7 + 3;
+
+  // Meta info box
+  pdf.setFillColor(245, 243, 255); // soft violet-50
+  pdf.setDrawColor(221, 214, 254); // violet-200
+  pdf.roundedRect(margin, y, contentWidth, 14, 2, 2, 'FD');
+
+  pdf.setFont('helvetica', 'normal');
+  pdf.setFontSize(8);
+  pdf.setTextColor(107, 114, 128); // gray-500
+  const metaText1 = `FILE: ${doc.fileName}   |   WORDS: ${doc.wordCount.toLocaleString()}   |   EST. READ TIME: ${doc.readingTimeMinutes} min`;
+  const metaText2 = `FORMAT: ${activeFormat.toUpperCase()}   |   TONE: ${(summary?.tone || 'Professional').toUpperCase()}   |   LANGUAGE: ${summary?.language || 'English'}`;
+  
+  pdf.setTextColor(76, 29, 149); // violet-900
+  pdf.text(metaText1, margin + 4, y + 5);
+  pdf.text(metaText2, margin + 4, y + 10.5);
+
+  y += 22;
+
+  // Section Header: Summary
+  pdf.setTextColor(109, 40, 217);
+  pdf.setFont('helvetica', 'bold');
+  pdf.setFontSize(11);
+  pdf.text(`EXECUTIVE SUMMARY (${activeFormat.toUpperCase()})`, margin, y);
+  y += 2;
+
+  pdf.setDrawColor(196, 181, 253);
+  pdf.line(margin, y, margin + contentWidth, y);
+  y += 6;
+
+  // Summary Content (strip markdown markers cleanly for PDF typography)
+  pdf.setTextColor(30, 41, 59); // slate-800
+  pdf.setFont('helvetica', 'normal');
+  pdf.setFontSize(9.5);
+
+  const cleanLines = summaryText
+    .replace(/^###\s+/gm, '')
+    .replace(/^##\s+/gm, '')
+    .replace(/^#\s+/gm, '')
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .split('\n');
+
+  for (const rawLine of cleanLines) {
+    if (!rawLine.trim()) {
+      y += 4;
+      continue;
+    }
+
+    const isHeading = rawLine.startsWith('1.') || rawLine.startsWith('2.') || rawLine.endsWith(':');
+    if (isHeading) {
+      pdf.setFont('helvetica', 'bold');
+      pdf.setTextColor(15, 23, 42);
+    } else {
+      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(51, 65, 85);
+    }
+
+    const wrapped = pdf.splitTextToSize(rawLine, contentWidth);
+    for (const wLine of wrapped) {
+      if (y > pageHeight - 20) {
+        pdf.addPage();
+        y = margin + 10;
+      }
+      pdf.text(wLine, margin, y);
+      y += 5.2;
+    }
+  }
+
+  // Key Takeaways section if available
+  if (doc.keyPoints?.takeaways && doc.keyPoints.takeaways.length > 0) {
+    y += 8;
+    if (y > pageHeight - 35) {
+      pdf.addPage();
+      y = margin + 10;
+    }
+
+    pdf.setTextColor(109, 40, 217);
+    pdf.setFont('helvetica', 'bold');
+    pdf.setFontSize(11);
+    pdf.text('KEY TAKEAWAYS & OBSERVATIONS', margin, y);
+    y += 2;
+    pdf.setDrawColor(196, 181, 253);
+    pdf.line(margin, y, margin + contentWidth, y);
+    y += 6;
+
+    pdf.setFont('helvetica', 'normal');
+    pdf.setFontSize(9);
+    pdf.setTextColor(30, 41, 59);
+
+    for (const takeaway of doc.keyPoints.takeaways) {
+      if (y > pageHeight - 20) {
+        pdf.addPage();
+        y = margin + 10;
+      }
+      const bulletText = `•  ${takeaway}`;
+      const wrapped = pdf.splitTextToSize(bulletText, contentWidth - 4);
+      pdf.text(wrapped, margin + 2, y);
+      y += wrapped.length * 4.8 + 2;
+    }
+  }
+
+  // Footer for each page
+  const totalPages = pdf.internal.pages.length - 1;
+  for (let i = 1; i <= totalPages; i++) {
+    pdf.setPage(i);
+    pdf.setFont('helvetica', 'normal');
+    pdf.setFontSize(7.5);
+    pdf.setTextColor(156, 163, 175);
+    pdf.text(
+      `Generated by SummaMind AI  •  Confidential & Proprietary`,
+      margin,
+      pageHeight - 8
+    );
+    pdf.text(`Page ${i} of ${totalPages}`, pageWidth - margin, pageHeight - 8, {
+      align: 'right',
+    });
+  }
+
+  const sanitizedFileName = (doc.title || 'document-summary')
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-');
+  pdf.save(`${sanitizedFileName}-summary.pdf`);
+}

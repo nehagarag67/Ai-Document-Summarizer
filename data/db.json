@@ -1,0 +1,270 @@
+{
+  "users": {
+    "usr_default": {
+      "id": "usr_default",
+      "email": "alex.chen@innovate.ai",
+      "name": "Alex Chen",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80",
+      "plan": "pro",
+      "createdAt": "2026-10-31T05:44:06.081Z",
+      "stats": {
+        "docsProcessed": 8,
+        "wordsAnalyzed": 14850,
+        "summariesGenerated": 14,
+        "timeSavedMinutes": 195
+      }
+    }
+  },
+  "documents": {
+    "sample-ai-trends-2026": {
+      "id": "sample-ai-trends-2026",
+      "title": "Future of Multimodal AI Agents (2026 Industry Report)",
+      "fileName": "multimodal-ai-agents-2026.pdf",
+      "fileType": "pdf",
+      "fileSize": 42800,
+      "wordCount": 1420,
+      "readingTimeMinutes": 6,
+      "createdAt": "2026-10-29T05:44:06.080Z",
+      "lastAccessedAt": "2026-10-31T05:44:06.081Z",
+      "isFavorite": true,
+      "tags": [
+        "AI",
+        "Tech Trends",
+        "Research"
+      ],
+      "currentSummaryFormat": "executive",
+      "rawText": "EXECUTIVE SUMMARY: NEXT-GENERATION AUTONOMOUS MULTIMODAL AGENTS (2026)\n\n1. Abstract & Industry Landscape\nThe transition from passive large language models to autonomous, multi-modal cognitive agents marks the most significant paradigm shift in enterprise computing since cloud migration. By Q3 2026, enterprise adoption of agentic architectures has grown 340% year-over-year. Agents no longer merely produce text answers; they observe graphical user interfaces, manipulate structured databases, synthesize live multi-source signals, and execute multi-step workflows across distributed cloud clusters.\n\n2. Architecture Breakdown\nState-of-the-art agent architectures consist of four primary pillars:\nA. Perception & Grounding: Real-time visual grounding, audio stream comprehension, and structured schema mapping.\nB. Latent Chain-of-Thought Reasoning: Dynamic thinking budgets allocate higher reasoning tokens to high-entropy edge cases while maintaining sub-100ms response times for transactional tasks.\nC. Tool Orchestration & API Mesh: Bi-directional Remote Procedure Calls (RPCs) and automated error correction with zero human intervention in 94.2% of standard operational runs.\nD. Episodic & Semantic Long-term Memory: Hierarchical vector caching paired with relational state graphs reducing hallucinations by 78% relative to 2024 baselines.\n\n3. Quantifiable Business Impact\nIn an extensive benchmark study of 120 Fortune 500 enterprises:\n- Developer velocity and software testing throughput increased by 4.2x.\n- Customer support ticket resolution times dropped from 22 minutes to 1.4 minutes on first contact.\n- Cross-enterprise knowledge discovery efficiency improved by 89%, directly recovering an estimated 11.4 work hours per employee monthly.\n- Infrastructure efficiency: Hybrid local-cloud speculative decoding cut inference compute expenses by 43%.\n\n4. Strategic Risks & Governance\nDespite breakthroughs, enterprises encounter three acute friction points:\n1. Nondeterministic Drift: Small perturbations in peripheral APIs occasionally degrade agent task compliance.\n2. Authorization & Least-Privilege Enclaves: Ensuring autonomous agents cannot execute non-reversible financial or infrastructure alterations without human-in-the-loop attestation.\n3. Model Poisoning & Prompt Injection Resilience: 12% of surveyed organizations experienced adversarial prompt vectors attempting to bypass strict business policies.\n\n5. Conclusion and 2027 Projections\nOrganizations that establish unified semantic data layers and safe agent sandboxes will outperform peers in customer retention and capital efficiency. Recommendation: Implement verifiable zero-trust agent registries and continuous evaluation harnesses immediately.",
+      "summaries": {
+        "executive": {
+          "format": "executive",
+          "length": "balanced",
+          "tone": "professional",
+          "language": "English",
+          "content": "### Executive Brief: Multimodal Autonomous Agents (2026)\n\n**Core Finding:**\nEnterprise computing has pivoted decisively from passive LLMs to multimodal autonomous agents, demonstrating **340% year-over-year adoption** in 2026. These systems orchestrate end-to-end operational workflows, visual understanding, and multi-API execution without human friction.\n\n**Key Quantitative Highlights:**\n* **4.2x Acceleration** in enterprise software development and testing cycles.\n* **93% Reduction in Resolution Time:** Customer support issues solved in 1.4 minutes versus 22 minutes previously.\n* **43% Lower Compute Cost:** Speculative decoding and hybrid edge-cloud routing mitigate running costs.\n* **11.4 Hours Saved** per employee each month through automated semantic knowledge retrieval.\n\n**Strategic Actionables for Leadership:**\n1. **Implement Zero-Trust Sandboxing:** Enforce least-privilege token permissions to prevent unauthorized agent operations.\n2. **Build Continuous Eval Suites:** Mitigate nondeterministic prompt drift through regression telemetry.\n3. **Consolidate Semantic Data Meshes:** High-performing agents require clean, structured schema access.",
+          "generatedAt": "2026-10-30T05:44:06.081Z"
+        }
+      },
+      "keyPoints": {
+        "takeaways": [
+          "340% Year-over-year enterprise adoption of autonomous agentic architectures.",
+          "Architecture is structured around four pillars: Multimodal Perception, Latent Reasoning, Tool Orchestration, and Hierarchical Memory.",
+          "Hallucinations reduced by 78% compared to 2024 baselines using relational state graphs.",
+          "Developer velocity elevated by 4.2x across Fortune 500 benchmarks.",
+          "Key risks include non-reversible actions and prompt injection resilience."
+        ],
+        "entities": [
+          {
+            "term": "Agentic Architecture",
+            "definition": "Systems capable of perception, planning, tool usage, and self-correction to fulfill complex goals.",
+            "category": "Concept"
+          },
+          {
+            "term": "Speculative Decoding",
+            "definition": "Inference optimization technique combining small draft models with large verifiers.",
+            "category": "Technology"
+          },
+          {
+            "term": "Hierarchical Memory",
+            "definition": "Tiered caching combining ephemeral vector recall and permanent relational state.",
+            "category": "Architecture"
+          }
+        ],
+        "metrics": [
+          {
+            "metric": "+340%",
+            "context": "YoY enterprise adoption rate of autonomous agent workflows in 2026."
+          },
+          {
+            "metric": "4.2x",
+            "context": "Increase in developer and QA throughput."
+          },
+          {
+            "metric": "1.4 min",
+            "context": "Average support ticket resolution time (down from 22 min)."
+          },
+          {
+            "metric": "-43%",
+            "context": "Reduction in inference compute expenses via hybrid model routing."
+          }
+        ],
+        "actionItems": [
+          {
+            "task": "Deploy verifiable zero-trust agent registries across engineering teams",
+            "owner": "Infra Sec",
+            "priority": "high"
+          },
+          {
+            "task": "Benchmark internal support workflows for agent-assisted triage",
+            "owner": "Customer Ops",
+            "priority": "medium"
+          },
+          {
+            "task": "Audit API endpoints for non-reversible authorization risks",
+            "owner": "Platform Lead",
+            "priority": "high"
+          }
+        ],
+        "flashcards": [
+          {
+            "question": "What are the four pillars of modern 2026 multimodal agents?",
+            "answer": "1. Perception & Grounding, 2. Latent Chain-of-Thought Reasoning, 3. Tool Orchestration & API Mesh, 4. Episodic & Semantic Long-term Memory."
+          },
+          {
+            "question": "By what percentage did hybrid speculative decoding reduce compute expenses?",
+            "answer": "It reduced compute costs by 43%."
+          },
+          {
+            "question": "What is the top operational risk cited for autonomous agents?",
+            "answer": "Nondeterministic drift and unauthorized execution of non-reversible actions without least-privilege guards."
+          }
+        ],
+        "sentiment": "analytical",
+        "difficulty": "Advanced"
+      },
+      "chatMessages": [
+        {
+          "id": "msg-1",
+          "role": "user",
+          "content": "What were the main productivity gains observed in the Fortune 500 study?",
+          "timestamp": "2026-10-31T00:44:06.081Z"
+        },
+        {
+          "id": "msg-2",
+          "role": "model",
+          "content": "According to Section 3 of the report (\"Quantifiable Business Impact\"), the key productivity gains from 120 Fortune 500 companies were:\n\n1. **Developer Velocity:** Software testing throughput increased by **4.2x**.\n2. **Support Resolution:** Ticket resolution times plummeted from 22 minutes down to **1.4 minutes** on first contact.\n3. **Knowledge Discovery:** An **89% boost in efficiency**, saving approximately **11.4 work hours per employee monthly**.\n4. **Inference Compute Costs:** Reduced by **43%** through hybrid local-cloud speculative decoding.",
+          "timestamp": "2026-10-31T00:44:08.081Z",
+          "citations": [
+            "Section 3: Quantifiable Business Impact"
+          ]
+        },
+        {
+          "id": "msg_xh58p9p",
+          "role": "user",
+          "content": "What are the three main risks mentioned in the report?",
+          "timestamp": "2026-10-31T05:44:25.230Z"
+        },
+        {
+          "id": "msg_zbwmll7",
+          "role": "model",
+          "content": "According to **Section 4 (\"Strategic Risks & Governance\")** of the report, enterprises encounter three acute friction points and risks:\n\n1. **Nondeterministic Drift:** Small perturbations in peripheral APIs occasionally degrade the agent's task compliance.\n2. **Authorization & Least-Privilege Enclaves:** The challenge of ensuring autonomous agents cannot execute non-reversible financial or infrastructure alterations without human-in-the-loop attestation.\n3. **Model Poisoning & Prompt Injection Resilience:** Adversarial prompt vectors attempting to bypass strict business policies, which were experienced by 12% of surveyed organizations.\n\n***\n\n💡 *Suggested Follow-up:*\n1. What governance measures does the report recommend to mitigate these risks?\n2. What are the four architectural pillars enabling multimodal agents in Section 2?",
+          "timestamp": "2026-10-31T05:45:50.095Z",
+          "citations": [
+            "Section 4",
+            "Section 2"
+          ]
+        },
+        {
+          "id": "msg_rvx63tv",
+          "role": "user",
+          "content": "What are the main risks mentioned in the report?",
+          "timestamp": "2026-10-31T05:46:06.313Z"
+        },
+        {
+          "id": "msg_g5t4xgg",
+          "role": "user",
+          "content": "What are the three main risks mentioned in the report?",
+          "timestamp": "2026-10-31T05:47:10.740Z"
+        },
+        {
+          "id": "msg_81v3qfz",
+          "role": "model",
+          "content": "Based on the document context:\n\n\"4. Strategic Risks & Governance\nDespite breakthroughs, enterprises encounter three acute friction points:\n1. Nondeterministic Drift: Small perturbations in peripheral APIs occasionally degrade agent task compliance.\n2. Authorization & Least-Privilege Enclaves: Ensuring autonomous agents cannot execute non-reversible financial or infrastructure alterations without human-in-the-loop attestation.\n3. Model Poisoning & Prompt Injection Resilience: 12% of surveyed organizations experienced adversarial prompt vectors attempting to bypass strict business policies.\"\n\n💡 *Suggested Follow-up:* Would you like an executive summary of these key points or action steps?",
+          "timestamp": "2026-10-31T05:47:20.743Z",
+          "citations": [
+            "Document Source"
+          ]
+        }
+      ],
+      "userId": "usr_default"
+    },
+    "sample-remote-work-handbook": {
+      "id": "sample-remote-work-handbook",
+      "title": "Global Remote Work & Async Collaboration Guide",
+      "fileName": "async-workplace-guide-2026.docx",
+      "fileType": "docx",
+      "fileSize": 28400,
+      "wordCount": 980,
+      "readingTimeMinutes": 4,
+      "createdAt": "2026-10-27T05:44:06.081Z",
+      "lastAccessedAt": "2026-10-30T05:44:06.081Z",
+      "isFavorite": false,
+      "tags": [
+        "Culture",
+        "Operations",
+        "Handbook"
+      ],
+      "currentSummaryFormat": "bullets",
+      "rawText": "MODERN DISTRIBUTED WORKPLACE OPERATIONAL HANDBOOK\n\n1. Core Philosophy: Asynchronous By Default\nIn a high-performing global organization spanning 14 time zones, synchronous meetings are treated as an expensive exception rather than the default operating mode. Every decision, specification, and project update must exist in writing before verbal discussions occur.\n\n2. The 3-Hour Overlap Rule\nEvery distributed team member is requested to maintain at least 3 contiguous hours of workday overlap with their primary squad for collaborative code review, urgent unblocking, and pair programming. Outside of this window, focus blocks must be respected without interruption.\n\n3. Documentation Standards\n- RFC (Request For Comments): Required for any technical or structural change impacting more than one team member. Must have 48-hour open feedback window.\n- Weekly Digest: Every project lead posts a Friday snapshot containing: Shipments, Blockers, and Next Week Priorities.\n- Video Memos: Screen recordings are restricted to under 3 minutes for quick feature walkthroughs.\n\n4. Performance & Well-being Guardrails\n- Output over presence: We measure deliverables, customer happiness, and test coverage—never keyboard activity or presence badges.\n- Mandatory Disconnection: 25 business days of annual paid leave, with automated Slack notification suppression during off-hours.",
+      "summaries": {
+        "bullets": {
+          "format": "bullets",
+          "length": "concise",
+          "tone": "professional",
+          "language": "English",
+          "content": "* **Async First:** Synchronous calls are reserved for high-stakes unblocking; all decisions must be documented in writing first.\n* **3-Hour Overlap:** Squads maintain a 3-hour daily synchronicity window while leaving the remaining hours free for uninterrupted deep work.\n* **RFC Decision Protocol:** Proposals require a 48-hour written feedback cycle prior to execution.\n* **Output-Driven Evaluation:** Performance is determined by shipped deliverables and metrics rather than hours logged.\n* **Healthy Boundaries:** Mandatory 25 days paid vacation and automated notification silencing.",
+          "generatedAt": "2026-10-28T05:44:06.081Z"
+        }
+      },
+      "keyPoints": {
+        "takeaways": [
+          "Writing is the primary communication medium; meetings are an expensive exception.",
+          "Teams adhere to the 3-hour overlap rule for fast collaborative iterations.",
+          "RFCs require a strict 48-hour commentary period before commitment.",
+          "Strict output-focused metrics replace clock-in surveillance."
+        ],
+        "entities": [
+          {
+            "term": "RFC Protocol",
+            "definition": "Request For Comments process allowing decentralized peer review.",
+            "category": "Process"
+          },
+          {
+            "term": "Async-First",
+            "definition": "Work style that decouples communication from immediate time constraints.",
+            "category": "Methodology"
+          }
+        ],
+        "metrics": [
+          {
+            "metric": "3 Hours",
+            "context": "Minimum contiguous workday overlap required between squad members."
+          },
+          {
+            "metric": "48 Hours",
+            "context": "Standard open comment review window for any technical RFC."
+          },
+          {
+            "metric": "3 Minutes",
+            "context": "Maximum recommended duration for asynchronous video walkthroughs."
+          }
+        ],
+        "actionItems": [
+          {
+            "task": "Set up template for Friday Weekly Digest across squad leads",
+            "owner": "Operations",
+            "priority": "medium"
+          },
+          {
+            "task": "Configure automated notification silencing for out-of-office team members",
+            "owner": "IT Ops",
+            "priority": "low"
+          }
+        ],
+        "flashcards": [
+          {
+            "question": "What is the required window for RFC review?",
+            "answer": "48 hours before decisions are finalized."
+          },
+          {
+            "question": "How is performance evaluated in this async framework?",
+            "answer": "Based purely on shipped deliverables, code quality, and outcomes—never on hours or online status."
+          }
+        ],
+        "sentiment": "positive",
+        "difficulty": "Beginner"
+      },
+      "chatMessages": [],
+      "userId": "usr_default"
+    }
+  }
+}

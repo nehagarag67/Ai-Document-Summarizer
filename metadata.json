@@ -1,0 +1,6 @@
+{
+  "name": "SummaMind AI - Intelligent Document Summarizer",
+  "description": "Modern AI document summarizer with PDF, DOCX, and TXT support. Real-time summarization, multi-format briefs, key-point extraction, interactive AI chat, and PDF export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

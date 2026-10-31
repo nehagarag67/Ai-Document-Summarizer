@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    border-color: var(--border, theme('colors.slate.200'));
+  }
+}
+
+/* Custom polished scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 51, 234, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(147, 51, 234, 0.4);
+}
